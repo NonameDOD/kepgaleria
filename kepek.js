@@ -1,16 +1,14 @@
-import { keplista } from "./keplista.js";
+import Kep from "./kep.js";
 
 export default class Kepek {
     #lista = {};
-    constructor (szuloElem) {
+    constructor (keplista, szuloElem) {
         this.szuloElem = szuloElem;
-        for (let index = 0; index < keplista.length; index++) {
-            this.#lista.push(keplista[i]);
-        }
-        this.megjelenit();
+        this.#lista = keplista;
+        this.megjelenit(szuloElem);
     }
 
-    megjelenit() {
+    megjelenit(szuloElem) {
         for (let index = 0; index < this.getLista().length; index++) {
            new Kep(this.getLista()[index],szuloElem);
         }
